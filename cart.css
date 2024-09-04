@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("photo.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #49130c;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-image: url("navbar-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #fbdcad;
+}
+
+.navbar img {
+    max-height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+footer {
+    background-color: #fbdcad;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart - Bakery Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <nav class="navbar">
+        <a href="index.html" class="nb">
+            <img src="https://res.cloudinary.com/dbqqjaqqa/image/upload/v1489836162/smaller_size_logo_wigzr1.png" alt="Bakery Logo">
+        </a>
+        <ul class="center">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="signup.html">Sign up/Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Your Cart</h1>
+
+         
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                    <tr>
+                        <td>Chocolate Cake</td>
+                        <td>
+                            <input type="number" class="form-control" value="1">
+                        </td>
+                        <td>$25</td>
+                        <td>$25</td>
+                        <td><button class="btn btn-danger">Remove</button></td>
+                    </tr>
+                     
+                </tbody>
+            </table>
+        </div>
+ 
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Cart Summary</div>
+                    <div class="panel-body">
+                        <p><strong>Subtotal:</strong> $25</p>
+                        <p><strong>Tax (5%):</strong> $1.25</p>
+                        <p><strong>Total:</strong> $26.25</p>
+                        <a href=" " class="btn btn-primary">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Shop Online</h3>
+                    <p>Grab & Go In-store Pick Up | Order Baked Goods</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Our Menu</h3>
+                    <p>Explore our delicious offerings</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>About Us</h3>
+                    <p>FAQs | Store Policy</p>
+                </div>
+            </div>
+            <p class="text-center">&copy; <span id="currentYear"></span> LA Americana Gourmet. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+ 
+</body>
+</html>

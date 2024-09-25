@@ -1,0 +1,481 @@
+<!DOCTYPE html >
+<html >
+<head>
+	<meta http-equiv="X-UA-Compatible" content="chrome=IE8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Chalkpad Pro</title>
+
+
+
+
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cuiet.codebrigade.in/faviconCB.ico">
+<link href="https://cuiet.codebrigade.in/css/style.css" rel="stylesheet" type="text/css" />
+<link href="https://cuiet.codebrigade.in/css/fullcalendar.css" rel="stylesheet" type="text/css" />
+<link href="https://cuiet.codebrigade.in/css/tipsy.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+</head>
+
+<body onLoad="setFocus()"  bgcolor="#FFFFFF" style="background: url('https://cce.codebrigade.in/images/Chitkara_University_pic.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
+<div style="height:6px; background-color:#ed3237"></div>
+<table width="990px" align="center" border="0">
+	<tr>
+		<td>
+<table align="center">
+	<tr>
+		<td height="75"></td>
+	</tr>
+	<tr>
+		<td>
+		<div style="width:685px; float:left">&nbsp;</div>
+
+		<div id="customHeight" style="width:285px;height:550px; padding-top:0px; background-color:#ffffff; border:2px solid #cccccc;float:left;">
+	
+	  <form name="loginForm" id="loginForm" method="post" enctype="multipart/form-data" action="https://cuiet.codebrigade.in/loginManager/checkLogin">
+	  <table border="0" cellspacing="0" cellpadding="0" width="285px;" align="right" style="float:left">
+	  	<tr>
+	  		<td height="20" colspan="2"></td>
+	  	</tr>
+	  	<tr>
+	  		<td colspan="2" align="center" >
+	  			<img src="https://cuiet.codebrigade.in//images/logo_373.png" >
+	  		</td>
+	  	</tr>
+          <tr>
+	  		<td height="20" colspan="2"></td>
+	  	</tr>
+	  	<tr>
+	  		<td style="padding-left:20px; font-family: Arial; font-size:15px;" colspan="2">
+	  			Username
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td colspan="2" style="padding-left:20px;padding-top:5px;">
+	  			<input type="text" name="txtUsername" id="txtUsername" style="border:1px solid #7f9db9; height:22px; width:220px"  value=""  />
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td height=12></td>
+	  	</tr>
+	  	<tr>
+	  		<td style="padding-left:20px; font-family: Arial; font-size:15px;">
+	  			Password
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td colspan="2" style="padding-left:20px;padding-top:5px;">
+	  			<input type="password" name="txtPassword" id="txtPassword" style="border:1px solid #7f9db9;width:220px;height:22px;" value="" />
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td height=12></td>
+	  	</tr>
+	  	<tr>
+	  		<td style="padding-left:20px; font-family: Arial; font-size:15px;">
+	  			Session
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td style="padding-left:20px;padding-top:5px;">
+	  			<select name="txtSession" id="txtSession" style="width:225px;height:23px; font-size:12px; border:1px solid #7f9db9; ">
+        <option value=''>---Select---</option><option value='7'>Jul-Dec 2022</option><option value='8'>JanJun2023</option><option value='9'>Jul-Dec2023</option><option value='10'>JanJun2024</option><option value='11' selected='true'>Jul-Dec2024</option><option value='12'>2025-26</option><option value='13'>2026-27</option><option value='14'>2027-28</option><option value='15'>2028-29</option></select>
+	<input type="hidden" name="txtInstitute" id="txtInstitute" value="1">
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td height=5></td>
+	  	</tr>
+
+          <tr id="showRecaptcha" style="display:none;">
+            <td colspan="2" style="padding-left:18px;" id="recaptchaDiv">
+              
+
+                 <!-- div to show reCAPTCHA -->
+             <div class="g-recaptcha" 
+                data-sitekey= 6LeLxQ4fAAAAAJnuxP4LW9jRMH_wML6muVu3olkg>
+            </div>
+
+            </td>
+        </tr>
+          
+          
+
+
+
+	  	<tr>
+	  		<td colspan="2" style="padding-left:18px;">
+	  			<div class="textVerdana12" style="margin-top:2px;padding-left:2px;color:#000000"><input type="checkbox" name="check" id="check" style="margin-left:0px;"/>Remember Password</div>
+	  			<input type="image" src="https://cuiet.codebrigade.in//images/login_bws_btn.png" style="margin-top:10px;" />
+	  			<div class="textVerdana12" style="margin-top:2px;cursor:pointer;padding-left:2px;color:#000000" onclick="forgotPassword();">Forgot your password? Click here</div>
+
+	  		</td>
+	  	</tr>
+        <tr><td align="left" style="padding-left:20px;"><div class="textVerdana12"><br><a href="https://www.codebrigade.in/privacy-policy.php" target="_blank">Privacy Policy</a></div></td></tr>
+	  	
+ 
+        <tr><td height="10"></td>
+</tr>
+          <tr><td align="center" ><a href="https://apps.apple.com/in/app/chalkpad-pro/id6443601604"><img src="https://cuiet.codebrigade.in/images/apple_store_icon.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://play.google.com/store/apps/details?id=codebrigade.chalkpadpro.app&hl=en_IN&gl=US"><img src="https://cuiet.codebrigade.in/images/gplaystore_icon.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><tr>
+<tr><td align="center" style="padding-top:2px; padding-bottom:2px; color:#00000 !imporant; "><div class="textVerdana12" style="text-align:left; color:#000; padding-left:50px;" ><strong>Mobile App Code : 800002</strong></div></td></tr>
+
+	  		<tr><td height="10"></td></tr>
+
+
+
+        
+          <tr>
+	  		<td valign="middle" style="text-align:left; padding-left:18px; color:#545454; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:14px;  "> Powered by &nbsp;<span style="vertical-align: middle;"> <img src="https://cuiet.codebrigade.in//images/code-brigade-logo-small.png" width="100"></span></td>
+             
+	  	</tr>
+	  </table>
+	 </form>
+
+
+
+	 </div>
+	</td>
+   </tr>
+  </table>
+
+		</td>
+	</tr>
+  </table>
+  <!-- Alert div -->
+  <div id="alertModal" style="display:none; width:420px;">
+<table width="100%" cellspacing=0 cellpadding=0 border=0>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/top_left.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_top.png);
+    background-position:top right; opacity:0.9"></td>
+    </tr>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png);">
+     <div style="background-color:#ffffff; position:relative">
+            <!-- here goes the content of the div -->
+          <table width="100%" cellspacing=0 cellpadding=0 border=0 id='alertContent'>
+
+            </table>
+
+     </div>
+    </td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    </tr>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/lt_bottom.png);
+    background-position:bottom left; opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_bottom.png);
+    background-position:bottom right; opacity:0.9"></td>
+    </tr></table>
+</div>
+  <!-- Alert div ends -->
+
+
+<!-- Chat window begins -->
+        <div id="showOnlineUsers" style="display:none; width:520px;">
+<table width="100%" cellspacing=0 cellpadding=0 border=0>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/top_left.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_top.png);
+    background-position:top right; opacity:0.9"></td>
+    </tr>
+	<tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png);">
+    <div style="background-color:#ffffff; position:relative">
+            <div id="showLoadingOnlineUsers" style="text-align:center; padding:10px">
+            <img src="https://cuiet.codebrigade.in/images/loader.gif"  />
+            </div>
+			<!-- here goes the content of the div -->
+			<div id="showContentOnlineUsers" style="display:none">
+            <form name="myFormOnlineUsers" id="myFormOnlineUsers" method="post"  enctype="multipart/form-data"
+            action="https://cuiet.codebrigade.in/loginManager/chatOnlineUsers/" style="margin:0px;">
+            <table width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+            <td colspan=3>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                 <tr>
+                 <td align="center" width="25px" height="33" class="gridPanelTitle">
+                 <img src="https://cuiet.codebrigade.in/images/resources.png"
+                 width="16px" height="16px">
+                 </td>
+                 <td align="left" class="gridPanelTitle">&nbsp;<b>Send Request</b>
+                 </td>
+                 <td class="gridPanelTitle" valign="center"><div id="cross" onclick="$.modal.close()" title="close" style="text-align:right; cursor:pointer">[x]</div></td>
+                 </tr>
+                </table>
+            </td>
+            </tr>
+			 <tr>
+            <td id="onlineUsersContainer">
+            <table class='error' id='onlineUsersNoticeTable' style="text-align:left; display:none">
+			 <tr>
+			  <td width="98%" id="onlineUsersNoticeCell" style='text-align:left;'>
+			  </td>
+			  <td valign='top'><div id='cross' style="text-align:right; cursor:pointer" title='close' onClick="hideDiv('onlineUsersNoticeTable')">[x]</div></td>
+			 </tr>
+			 </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td width="50%" style="padding:5px;" colspan=2>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+                    <td colspan="3" class="textVerdana11" style="padding:5px 0px 5px 0px" valign="top">
+					<img src="https://cuiet.codebrigade.in/images/logo.gif"  />
+					</td>
+
+                </tr>
+					<tr>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px" valign="top"><strong>Category</strong></td>
+														<td class="textVerdana11" style="padding:5px 0px 5px 0px" width="2%" valign="top"> <b>:</b></td>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px">
+														<select class="textVerdana11"  name= "chatCategory" id="chatCategory" >
+            </select>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px" valign="top"><strong>Name</strong></td>
+														<td class="textVerdana11" style="padding:5px 0px 5px 0px" width="2%" valign="top"> <b>:</b></td>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px">
+														<input type="text" id="chatUserName" name="chatUserName" />
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px" valign="top"><strong>Reason(s)</strong></td>
+														<td class="textVerdana11" style="padding:5px 0px 5px 0px" width="2%" valign="top"> <b>:</b></td>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px">
+                                                        <textarea rows="5" style="width: 90%;" id="chatRemarks" name="chatRemarks"/></textarea>
+                                                    </tr>
+
+
+
+					  <tr>
+        <td colspan="4" align="right" style="padding-top:5px;padding-right:10px">
+        <input id="chatButton" class="submitBtn" type="submit" name="submitClose" value="Send Request" />
+        &nbsp;<input id="exit" onClick="$.modal.close();" class="submitBtnClose" type="button" name="Cancel" value="Close" />
+        </td>
+      </tr>
+
+				</td>
+            </tr>
+
+            </table>
+    </td>
+    </tr>
+    </table>
+    </td>
+    <tr>
+    <td height="10px"></td>
+    </tr>
+    </table>
+
+    </form>
+
+    <!-- Div content ends -->
+    </div>
+
+    </td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    </tr>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/lt_bottom.png);
+    background-position:bottom left; opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_bottom.png);
+    background-position:bottom right; opacity:0.9"></td>
+    </tr>
+    </table>
+</div>
+<!-- Chat window ends -->
+<!-- This is the Online Users window that opens up -->
+
+<div id="showOnlineCategoryUsers" style="display:none; width:320px;">
+    <table width="100%" cellspacing=0 border=0 cellpadding=0 border=0>
+        <tr>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/top_left.png); opacity:0.9"></td>
+            <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_top.png);background-position:top right; opacity:0.9"></td>
+        </tr>
+        <tr>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+
+            <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png);">
+                <div style="background-color:#ffffff; position:relative">
+                    <div id="showLoadingOnlineCategoryUsers" style="text-align:center; padding:10px">
+                        <img src="https://cuiet.codebrigade.in/images/loader.gif"  />
+                    </div>
+
+                        <!-- here goes the content of the div -->
+                    <div id="showContentOnlineCategoryUsers" style="display:none">
+                        <table width="300"  cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td colspan=3>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" width="25px" height="33" class="gridPanelTitle">
+                                                <img height="16px" width="16px" src="https://cuiet.codebrigade.in/images/student.png">
+
+                                            </td>
+
+                                            <td align="left" width="50%" class="gridPanelTitle" id="countOnlineCategoryUsers"></td>
+                                             <td valign='top' width="50%">
+                                               <div id='cross' class="gridPanelTitle" style="height:33px;padding-right:5px;text-align:right; cursor:pointer" title='close' onClick="$.modal.close()"><span style="position:relative;top:8px;">[x]</span></div>
+
+                                             </td>
+
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="showformContainerOnlineCategoryUsers">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="100%" style="padding:5px;" colspan=2>
+
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                    <!-- content of show div-->
+                                                    <div id="onlineCategoryUsersName" class="textVerdana11" style="width:100%;height:130px;overflow:auto;overflow-x:hidden;">
+</div>
+
+
+                                                    <!-- content end at show div model-->
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="10px"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                                    <!-- Div content ends -->
+                </div>
+            </td>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+        </tr>
+        <tr>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/lt_bottom.png);
+                background-position:bottom left; opacity:0.9">
+            </td>
+            <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+            <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_bottom.png);
+                background-position:bottom right; opacity:0.9">
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- Show Student window ends -->
+    <div id="forgotPassword" style="display:none; width:320px;">
+<table width="100%" cellspacing=0 cellpadding=0 border=0>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/top_left.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_top.png);
+    background-position:top right; opacity:0.9"></td>
+    </tr>
+	<tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png);">
+    <div style="background-color:#ffffff; position:relative">
+            <div id="forgotPasswordLoading" style="text-align:center; padding:10px">
+            <img src="https://cuiet.codebrigade.in/images/loader.gif"  />
+            </div>
+			<!-- here goes the content of the div -->
+			<div id="forgotPasswordContent" style="display:none">
+            <form name="myFormForgotPassword" id="myFormForgotPassword" method="post"  enctype="multipart/form-data"
+            action="https://cuiet.codebrigade.in/loginManager/forgotPassword/" style="margin:0px;">
+            <table width="300" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+            <td colspan=3>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                 <tr>
+                 <td align="center" width="25px" height="33" class="gridPanelTitle">
+                 <img src="https://cuiet.codebrigade.in/images/resources.png"
+                 width="16px" height="16px">
+                 </td>
+                 <td align="left" class="gridPanelTitle">&nbsp;<b>Forgot Password</b>
+                 </td>
+                 <td class="gridPanelTitle" valign="center"><div id="cross" onclick="$.modal.close()" title="close" style="text-align:right; cursor:pointer">[x]</div></td>
+                 </tr>
+                </table>
+            </td>
+            </tr>
+			 <tr>
+            <td id="forgotPasswordContainer">
+            <table class='error' id='forgotPasswordNoticeTable' style="text-align:left; display:none">
+			 <tr>
+			  <td width="98%" id="forgotPasswordNoticeCell" style='text-align:left;'>
+			  </td>
+			  <td valign='top'><div id='cross' style="text-align:right; cursor:pointer" title='close' onClick="hideDiv('forgotPasswordNoticeTable')">[x]</div></td>
+			 </tr>
+			 </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td width="50%" style="padding:5px;" colspan=2>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px" valign="top"><strong>Username</strong></td>
+														<td class="textVerdana11" style="padding:5px 0px 5px 0px" width="2%" valign="top"> <b>:</b></td>
+                                                        <td class="textVerdana11" style="padding:5px 0px 5px 0px">
+														<input type="text" id="txtForgotPassword" name="txtForgotPassword" />
+                                                    </tr>
+					  <tr>
+        <td colspan="4" align="right" style="padding-top:5px;padding-right:10px">
+        <input id="chatButton" class="submitBtn" type="submit" name="submitClose" value="Submit" />
+        &nbsp;<input id="exit" onClick="$.modal.close();" class="submitBtnClose" type="button" name="Cancel" value="Close" />
+        </td>
+      </tr>
+
+				</td>
+            </tr>
+
+            </table>
+    </td>
+    </tr>
+    </table>
+    </td>
+    <tr>
+    <td height="10px"></td>
+    </tr>
+    </table>
+
+    </form>
+
+    <!-- Div content ends -->
+    </div>
+
+    </td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    </tr>
+    <tr>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/lt_bottom.png);
+    background-position:bottom left; opacity:0.9"></td>
+    <td style="background-image:url(https://cuiet.codebrigade.in/images/outer_bg.png); opacity:0.9"></td>
+    <td width=10 height=10 style="background-image:url(https://cuiet.codebrigade.in/images/rt_bottom.png);
+    background-position:bottom right; opacity:0.9"></td>
+    </tr>
+    </table>
+</div>
+
+
+
+<div style="float:right;margin-right:0px;position:absolute;right:10px;top:0px;">
+	
+    <a href="http://www.codebrigade.in" target="_blank"><img src="https://cuiet.codebrigade.in/cb_top_right_icon.png"></a></div>
+</body>
+</html>

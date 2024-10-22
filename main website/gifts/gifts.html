@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festive Cakes - Confession Cakes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="gifts.css"> <!-- Include your main CSS file -->
+    <style>
+        .logo {
+    margin-right: 2cm;
+}
+.logo img {
+    height: 70px;
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Keep height same as width for round shape */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image fits well */ 
+}
+        .card {
+            transition: transform 0.2s; /* Smooth zoom effect */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+        .card-img-top {
+            width: 100%; /* Make the image fill the card width */
+            height: 200px; /* Fixed height for uniformity */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+        }
+        .quote-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .navbar, .footer {
+            background-color: rgb(241, 211, 216); /* Theme color */
+            color: white;
+        }
+        .modal-content {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\1000_F_92710516_igVmCzefWIC2h3d8iSlmuiIcaXbvKe1t.jpg"alt="Confession Cakes Logo" style="height: 40px;">
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="SEARCH GIFTS, CAKES, ETC." id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="menu">
+            <a href="profile/profile.html">
+                <button class="dropdown profile">PROFILE &#128100;</button>
+                <div class="dropdown-content">
+                    <a href="#">MY ACCOUNT</a>
+                    <a href="#">MY ORDER</a>
+                    <a href="#">CONTACT US</a>
+                    <a href="#">EDIT PROFILE</a>
+                </div>
+            </a>
+            <a href="cart/cart.html" class="cart">
+                &#128722; <b>CART</b>
+            </a>
+        </div>
+    </div>
+    <div class="sub-navbar text-center py-2">
+        <button class="btn btn-primary">FESTIVAL CAKE</button>
+        <button class="btn btn-primary">ANNIVERSARY CAKE</button>
+        <button class="btn btn-primary">BIRTHDAY CAKE</button>
+        <button class="btn btn-primary">GIFTS</a></button>
+        <button class="btn btn-primary">PERSONALISED CAKE</button>
+        <button class="btn btn-primary">CUSTOMISABLE CAKE</button>
+        <button class="btn btn-primary">CUSTOMISABLE GIFTS</button>
+    </div>
+
+    <div class="info-bar text-center py-3">
+        <div>⏰ 2 HOURS DELIVERY</div>
+        <div>8 MILLION HAPPY CUSTOMERS 😊</div>
+        <div>CUSTOMISABLE CAKES AND GIFTS 🎁</div>
+        <div>FREE SHIPPING 🛍</div>
+    </div>
+
+    <h1 class="text-center my-5">Explore Our Festive Cakes</h1>
+
+    <div class="container" id="cakeContainer">
+        <div class="row">
+            <!-- Remaining Cakes -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Chocolate Drip Cake', 'A rich chocolate cake with a beautiful drip effect, perfect for celebrations.', 'file:///C:/Users/HP/Downloads/choclatedrip.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.09_6610260d.jpg" class="card-img-top" alt="Chocolate Drip Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Chocolate Drip Cake</h5>
+                        <p class="card-text">A rich chocolate cake with a beautiful drip effect, perfect for celebrations.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Chocolate Drip Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Vanilla Celebration Cake', 'Light and fluffy vanilla cake adorned with fresh fruits.', 'file:///C:/Users/HP/Downloads/vanila.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.08_abb88fd1.jpg" class="card-img-top" alt="Vanilla Celebration Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Vanilla Celebration Cake</h5>
+                        <p class="card-text">Light and fluffy vanilla cake adorned with fresh fruits.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Vanilla Celebration Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Red Velvet Cake', 'A classic red velvet cake with creamy frosting for a touch of elegance.', 'file:///C:/Users/HP/Downloads/redvelvet.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.08_e56bd1cc.jpg" class="card-img-top" alt="Red Velvet Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Red Velvet Cake</h5>
+                        <p class="card-text">A classic red velvet cake with creamy frosting for a touch of elegance.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Red Velvet Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Fruit Cake', 'A moist cake filled with dried fruits and nuts, perfect for festive occasions.', 'file:///C:/Users/HP/Downloads/fruit.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.09_ec1b69d5.jpg" class="card-img-top" alt="Fruit Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Fruit Cake</h5>
+                        <p class="card-text">A moist cake filled with dried fruits and nuts, perfect for festive occasions.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Fruit Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Carrot Cake', 'Deliciously spiced carrot cake topped with cream cheese frosting.', 'file:///C:/Users/HP/Downloads/carrot.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.07_00bfe1b5.jpg" class="card-img-top" alt="Carrot Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Carrot Cake</h5>
+                        <p class="card-text">Deliciously spiced carrot cake topped with cream cheese frosting.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Carrot Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Lemon Drizzle Cake', 'A zesty lemon cake with a sweet drizzle, perfect for any celebration.', 'file:///C:/Users/HP/Downloads/lemon.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.11_28d89b57.jpg" class="card-img-top" alt="Lemon Drizzle Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Lemon Drizzle Cake</h5>
+                        <p class="card-text">A zesty lemon cake with a sweet drizzle, perfect for any celebration.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Lemon Drizzle Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Tiramisu Cake', 'Classic Italian dessert with coffee-flavored sponge and mascarpone cream.', 'file:///C:/Users/HP/Downloads/Tiramisu%20Cake.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.09_6610260d.jpg" class="card-img-top" alt="Tiramisu Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Tiramisu Cake</h5>
+                        <p class="card-text">Classic Italian dessert with coffee-flavored sponge and mascarpone cream.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Tiramisu Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Cheesecake', 'Creamy cheesecake with a buttery graham cracker crust, topped with berries.', 'file:///C:/Users/HP/Downloads/Cheesecake.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.12_4cf4394d.jpg" class="card-img-top" alt="Cheesecake">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheesecake</h5>
+                        <p class="card-text">Creamy cheesecake with a buttery graham cracker crust, topped with berries.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Cheesecake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Coconut Cream Cake', 'A moist coconut cake layered with coconut cream frosting.', 'file:///C:/Users/HP/Downloads/Coconut%20Cream%20Cake.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.10_7ec2be66.jpg" class="card-img-top" alt="Coconut Cream Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Coconut Cream Cake</h5>
+                        <p class="card-text">A moist coconut cake layered with coconut cream frosting.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Coconut Cream Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4 cake">
+                <div class="card" onclick="showModal('Pineapple Upside Down Cake', 'A classic dessert featuring caramelized pineapples and cherries.', 'file:///C:/Users/HP/Downloads/Pineapple%20Upside%20Down%20Cake.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\gifts\WhatsApp Image 2024-10-22 at 09.22.10_996ec1da.jpg" class="card-img-top" alt="Pineapple Upside Down Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Pineapple Upside Down Cake</h5>
+                        <p class="card-text">A classic dessert featuring caramelized pineapples and cherries.</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" min="1" value="1">
+                        <a href="#" class="btn btn-primary mt-2" onclick="addToCart('Pineapple Upside Down Cake')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(255, 247, 255);" class="py-4">
+        <center>
+            <b><br> Discover the Perfect Festive Cake for Every Occasion<br></b>
+            A delicious cake can make any celebration memorable. Explore our wide range of festive cakes!
+        </center>
+    </div>
+
+    <footer class="footer text-center py-3">
+        <div class="footer-content">
+            <p>Follow us on social media:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank" class="icon instagram">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" class="icon facebook">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" class="icon twitter">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Confession Cakes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" tabindex="-1" role="dialog" id="cakeModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        const cakes = [
+            "Chocolate Drip Cake",
+            "Vanilla Celebration Cake",
+            "Red Velvet Cake",
+            "Fruit Cake",
+            "Carrot Cake",
+            "Lemon Drizzle Cake",
+            "Tiramisu Cake",
+            "Cheesecake",
+            "Coconut Cream Cake",
+            "Pineapple Upside Down Cake"
+        ];
+
+        function showModal(title, description, image) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImage').src = image;
+            $('#cakeModal').modal('show');
+        }
+
+        function addToCart(cake) {
+            alert("${cake} added to your cart!");
+        }
+
+         
+
+         
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

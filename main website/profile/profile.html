@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">Siya</h1>
+                <p class="profile-email">Email: siya@example.com</p>
+                <p class="profile-phone">Phone: 7717623925</p>
+                <p class="profile-address">Address: Chandigarh</p>
+            </div>
+        </div>
+
+        <div class="wallet-section">
+            <h3>Wallet Balance</h3>
+            <p class="wallet-amount" id="walletAmount">Rs. 456</p>
+            <button class="add-cash-btn" onclick="addCash()">Add Cash</button>
+        </div>
+
+        <div class="order-history-container">
+            <h2>Order History</h2>
+            <div class="order">
+                <div class="order-header">
+                    <span><strong>Order #12346</strong></span>
+                    <span>Placed on: Oct 1, 2024</span>
+                </div>
+                <div class="order-details">
+                    <p>Product: Herbal Body Lotion</p>
+                    <p>Quantity: 2</p>
+                    <p>Total: Rs. 640</p>
+                    <p>Status: Delivered on 5 Oct 2024</p>
+                </div>
+            </div>
+            <hr>
+            <div class="order">
+                <div class="order-header">
+                    <span><strong>Order #124446</strong></span>
+                    <span>Placed on: Oct 1, 2024</span>
+                </div>
+                <div class="order-details">
+                    <p>Product: Herbal Body Lotion</p>
+                    <p>Quantity: 5</p>
+                    <p>Total: Rs. 1144</p>
+                    <p>Status: Delivered on 5 Oct 2024</p>
+                </div>
+            </div>
+            <hr>
+
+            <div class="section payment-methods">
+                <h3>Payment Methods</h3>
+                <p>Default Payment Method: <strong>Credit Card (**** 1234)</strong></p>
+                <p>Add a new payment method <a href="#" class="settings-link">here</a>.</p>
+            </div>
+
+            <div class="section account-settings">
+                <h3>Account Settings</h3>
+                <p>Manage your <a href="#" class="settings-link">account settings</a>.</p>
+                <p>Update <a href="#" class="settings-link">password and security settings</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

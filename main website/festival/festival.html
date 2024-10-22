@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifts - Confession Cakes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="festival.css"> <!-- Include your main CSS file -->
+    <style>
+        
+        .card {
+            transition: transform 0.2s; /* Smooth zoom effect */
+            height: 100%; /* Ensure cards have the same height */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+        .quote-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Space between content */
+            height: 100%; /* Full height for card body */
+        }
+        .quantity-input {
+            width: 60px; /* Fixed width for quantity input */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            
+        <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\1000_F_92710516_igVmCzefWIC2h3d8iSlmuiIcaXbvKe1t.jpg" alt="Confession Cakes Logo" style="height: 40px;">
+        CONFECTION CAKE</div>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="SEARCH GIFTS, CAKES, ETC.">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="menu">
+            <a href="profile/profile.html">
+                <button class="dropdown profile">PROFILE &#128100;</button>
+                <div class="dropdown-content">
+                    <a href="#">MY ACCOUNT</a>
+                    <a href="#">MY ORDER</a>
+                    <a href="#">CONTACT US</a>
+                    <a href="#">EDIT PROFILE</a>
+                </div>
+            </a>
+            <a href="cart/cart.html" class="cart">
+                &#128722; <b>CART</b>
+            </a>
+        </div>
+    </div>
+
+    <div class="sub-navbar text-center py-2">
+        <button class="btn btn-primary"><a href="festive cake.html">FESTIVAL CAKE</a></button>
+        <button class="btn btn-primary">ANNIVERSARY CAKE</button>
+        <button class="btn btn-primary">BIRTHDAY CAKE</button>
+        <button class="btn btn-primary">GIFTS</button>
+        <button class="btn btn-primary">PERSONALISED CAKE</button>
+        <button class="btn btn-primary">CUSTOMISABLE CAKE</button>
+        <button class="btn btn-primary">CUSTOMISABLE GIFTS</button>
+    </div>
+
+    <div class="info-bar text-center py-3">
+        <div>⏰ 2 HOURS DELIVERY</div>
+        <div>8 MILLION HAPPY CUSTOMERS 😊</div>
+        <div>CUSTOMISABLE CAKES AND GIFTS 🎁</div>
+        <div>FREE SHIPPING 🛍</div>
+    </div>
+
+    <h1 class="text-center my-5">Explore Our Gifts</h1>
+
+    <div class="container">
+        <div class="row">
+            <!-- Gift Cards -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Personalized Mug', 'A custom mug with your favorite photo and a heartfelt message.', 'file:///C:/Users/HP/Downloads/mug.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.51_48e5ce19.jpg"class="card-img-top" alt="Personalized Mug">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Mug</h5>
+                        <p class="card-text">A custom mug with your favorite photo and a heartfelt message.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-mug">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Personalized Mug', document.getElementById('quantity-mug').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Spa Gift Set', 'A relaxing spa set that includes bath bombs, oils, and more.', 'file:///C:/Users/HP/Downloads/spa.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.50_83509607.jpg"class="card-img-top" alt="Spa Gift Set">
+                    <div class="card-body">
+                        <h5 class="card-title">Spa Gift Set</h5>
+                        <p class="card-text">A relaxing spa set that includes bath bombs, oils, and more.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-spa">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Spa Gift Set', document.getElementById('quantity-spa').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Scented Candles', 'Fill the room with calming scents and create a cozy atmosphere.', 'file:///C:/Users/HP/Downloads/candel.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.53_79043e12.jpg" class="card-img-top" alt="Scented Candles">
+                    <div class="card-body">
+                        <h5 class="card-title">Scented Candles</h5>
+                        <p class="card-text">Fill the room with calming scents and create a cozy atmosphere.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-candles">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Scented Candles', document.getElementById('quantity-candles').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Handmade Chocolates', 'Indulge in rich and flavorful handmade chocolates, perfect for any occasion.', 'file:///C:/Users/HP/Downloads/choclate.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.50_ea400cbe.jpg" class="card-img-top" alt="Handmade Chocolates">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade Chocolates</h5>
+                        <p class="card-text">Indulge in rich and flavorful handmade chocolates, perfect for any occasion.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-chocolates">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Handmade Chocolates', document.getElementById('quantity-chocolates').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Personalized Jewelry', 'Custom jewelry pieces to celebrate special moments.', 'file:///C:/Users/HP/Downloads/jewellery.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.52_19537e5e.jpg" class="card-img-top" alt="Personalized Jewelry">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Jewelry</h5>
+                        <p class="card-text">Custom jewelry pieces to celebrate special moments.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-jewelry">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Personalized Jewelry', document.getElementById('quantity-jewelry').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Gift Basket', 'A delightful assortment of snacks and treats for everyone.', 'file:///C:/Users/HP/Downloads/giftset.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.52_6b144751.jpg" class="card-img-top" alt="Gift Basket">
+                    <div class="card-body">
+                        <h5 class="card-title">Gift Basket</h5>
+                        <p class="card-text">A delightful assortment of snacks and treats for everyone.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-basket">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Gift Basket', document.getElementById('quantity-basket').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Gourmet Tea Set', 'Enjoy a selection of premium teas in a beautiful set.', 'file:///C:/Users/HP/Downloads/teaset.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.53_750c72d2.jpg" class="card-img-top" alt="Gourmet Tea Set">
+                    <div class="card-body">
+                        <h5 class="card-title">Gourmet Tea Set</h5>
+                        <p class="card-text">Enjoy a selection of premium teas in a beautiful set.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-tea">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Gourmet Tea Set', document.getElementById('quantity-tea').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Custom Puzzle', 'Create a unique puzzle from your favorite image.', 'file:///C:/Users/HP/Downloads/custompuzzle.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.55_7062f238.jpg"class="card-img-top" alt="Custom Puzzle">
+                    <div class="card-body">
+                        <h5 class="card-title">Custom Puzzle</h5>
+                        <p class="card-text">Create a unique puzzle from your favorite image.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-puzzle">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Custom Puzzle', document.getElementById('quantity-puzzle').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Artisan Soap Set', 'Luxurious handmade soaps for a pampering experience.', 'file:///C:/Users/HP/Downloads/soap.webp')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.53_b71974c6.jpg"class="card-img-top" alt="Artisan Soap Set">
+                    <div class="card-body">
+                        <h5 class="card-title">Artisan Soap Set</h5>
+                        <p class="card-text">Luxurious handmade soaps for a pampering experience.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-soap">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Artisan Soap Set', document.getElementById('quantity-soap').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card" onclick="showModal('Personalized Calendar', 'Custom calendar featuring your favorite photos.', 'file:///C:/Users/HP/Downloads/travelmug.jpg')">
+                    <img src="C:\Users\Rajiv\Desktop\sem3-fee\main website\festival\WhatsApp Image 2024-10-22 at 09.19.51_31761fc3.jpg" class="card-img-top" alt="Personalized Calendar">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Calendar</h5>
+                        <p class="card-text">Custom calendar featuring your favorite photos.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input type="number" class="form-control quantity-input" value="1" min="1" id="quantity-calendar">
+                            <a href="#" class="btn btn-primary ml-2" onclick="addToCart('Personalized Calendar', document.getElementById('quantity-calendar').value)">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: rgb(255, 247, 255);" class="py-4">
+        <center>
+            <b><br> Discover the Perfect Gift for Every Occasion<br></b>
+            A thoughtful gift can make a lasting impression. Explore our wide range of customizable gifts that suit every celebration!
+        </center>
+    </div>
+
+    <footer class="footer bg-light text-center py-3">
+        <div class="footer-content">
+            <p>Follow us on social media:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank" class="icon instagram">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" class="icon facebook">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" class="icon twitter">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Confession Cakes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for gift details -->
+    <div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-labelledby="giftModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="giftModalLabel">Gift Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="img-fluid">
+                    <h5 id="modalTitle"></h5>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const cart = [];
+
+        function addToCart(item, quantity) {
+            const existingItem = cart.find(cartItem => cartItem.name === item);
+            if (existingItem) {
+                existingItem.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name: item, quantity: parseInt(quantity) });
+            }
+            alert(${quantity} of ${item} has been added to your cart!);
+        }
+
+        function showModal(title, description, image) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImage').src = image;
+            $('#giftModal').modal('show');
+        }
+
+        function getRandomGift() {
+            const gifts = [
+                'Personalized Mug',
+                'Spa Gift Set',
+                'Scented Candles',
+                'Handmade Chocolates',
+                'Personalized Jewelry',
+                'Gift Basket',
+                'Gourmet Tea Set',
+                'Custom Puzzle',
+                'Artisan Soap Set',
+                'Personalized Calendar'
+            ];
+            const randomGift = gifts[Math.floor(Math.random() * gifts.length)];
+            alert(How about this gift? ${randomGift});
+        }
+
+        // Countdown timer function
+        function startCountdown(duration) {
+            let timer = duration, minutes, seconds;
+            const countdownElement = document.getElementById('countdown');
+
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdownElement.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            // Start the countdown for 5 minutes
+            startCountdown(300);
+        };
+    </script>
+</body>
+</html>

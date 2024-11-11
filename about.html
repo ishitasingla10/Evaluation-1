@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Confection Cakes</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+        }
+        .navbar {
+            background-color: #343a40; 
+            padding: 20px;
+            height: 80px;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        .navbar-brand img {
+            margin-right: 10px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .nav-item {
+            padding: 0 20px;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-size: 1.1rem;
+        }
+        .nav-link:hover {
+            color: #ffd700 !important;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: #343a40;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #search-bar {
+            border-radius: 5px;
+            border: 1px solid #343a40;
+        }
+        
+
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            
+        }
+        .team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.team-member {
+    max-width: 250px;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #6f4f37;
+    margin-top: 10px;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.card-text {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+        footer {
+            background-color: #6f4f37;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 100px;  
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.company-name {
+  font-size: 24px;
+  margin: 0;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Integrated Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="file:///C:/Users/HP/Downloads/logo.jpg" alt="Logo" width="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:3000/cake1">Customized</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="scrollToFooter()">Contact Us</a></li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" id="search-bar" class="form-control" placeholder="SEARCH CAKE, GIFTS, ETC." oninput="filterItems()">
+                    <button class="search-button">🔍</button>
+                </div>
+                <a href="cart.html" class="btn btn-light cart-button ms-2">&#128722; <b>CART</b></a>
+                
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="about-section">
+        <h2>About Confection Cakes</h2>
+        <p>Welcome to Confection Cakes! We specialize in creating delicious, handmade cakes for all occasions.</p>
+        
+        <div class="team-container">
+            <div class="team-member card">
+                <img src="sarthak.jpg" alt="Sarthak" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Sarthak</h4>
+                    <p class="card-subtitle">Founder & Investor</p>
+                    <p class="card-text">Sarthak brings passion and creativity to every cake. His attention to detail ensures that every cake is a work of art.</p>
+                </div>
+            </div>
+            <div class="team-member card">
+                <img src="sneha.jpg" alt="Sneha" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Sneha</h4>
+                    <p class="card-subtitle">Co-Founder & Baker</p>
+                    <p class="card-text">Sneha is the heart of our bakery. Her expertise in baking creates the perfect balance of flavor and texture in every bite.</p>
+                </div>
+            </div>
+            <div class="team-member card">
+                <img src="ishita.jpg" alt="Ishita" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Ishita</h4>
+                    <p class="card-subtitle">Marketing & Customer Relations</p>
+                    <p class="card-text">Ishita makes sure every customer has an unforgettable experience. She is passionate about sharing the magic of our cakes with the world.</p>
+                </div>
+            </div>
+            <div class="team-member card">
+                <img src="vansh.jpg" alt="Vansh" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Vansh</h4>
+                    <p class="card-subtitle">Operations & Logistics</p>
+                    <p class="card-text">Vansh ensures our operations run smoothly, from cake delivery to managing our supply chain, making sure everything is perfect!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="Footer" style="background:  #343a40; padding: 20px; color: white; text-align: center; font-family: Arial, sans-serif;">
+        <div class="footer-content">
+            <div class="footer-logo">
+              <img src=" file:///C:/Users/HP/Downloads/logo.jpg" alt="Company Logo"> <h2 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Confession Cakes</h2>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Main Branch:</h3>
+            <p>S.C.O. 91-92, Sector-9, Main Market, near OPS School, Ambala City</p>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Other Branches:</h3>
+            <p>Shop no. 8, Pipli Road, Kurukshetra</p>
+            <p>Shop no. 6/13 opposite SD Public School, Jagadhri Road, Ambala Cantt</p>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Phone:</h3>
+            <p><strong>Main Branch:</strong> +91 70825-04343, +91 70825-14343</p>
+            <p><strong>Kurukshetra Branch:</strong> +91 70829-04343, +91 70827-14343</p>
+            <p><strong>Ambala Cantt Branch:</strong> +91 70826-04343, +91 70826-14343</p>
+        </div>
+    
+        <div>
+            <h3 style="color: lightgreen; margin: 10px 0;">Email:</h3>
+            <p><a href="mailto:mohanbakery1929@gmail.com" style="color: lightgreen; text-decoration: none;">mohanbakery1929@gmail.com</a></p>
+        </div>
+    </footer>
+    <script>
+        function scrollToFooter() {
+            document.getElementById("Footer").scrollIntoView({ behavior: "smooth" });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', () => {
+                    member.querySelector('p').style.color = '#d97b6a';
+                });
+                member.addEventListener('mouseleave', () => {
+                    member.querySelector('p').style.color = '#777';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Selection - Confession Cakes</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            padding: 20px;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+            width: 100px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        .nav-item {
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #ffd700 !important;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+
+        .category-section {
+            margin: 40px 0;
+            flex: 1;
+        }
+
+        .card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;  
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: #343a40;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #search-bar {
+            border-radius: 5px;
+            border: 1px solid #343a40;
+        }
+
+        .toggle-button {
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+        .card-price {
+            color: green;   
+            font-weight: bold;
+            margin-bottom: 10px; 
+        }
+
+        .add-to-cart {
+            justify-content: center;  
+            display: flex;
+        }
+        .card-img-top {
+    height: 500px;  
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src=" file:///C:/Users/HP/Downloads/logo.jpg" alt="Logo" width="40">
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+               <li class="nav-item"><a class="nav-link" href="http://localhost:3000/cake1">Customized</a></li>
+               <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li> 
+               <li class="nav-item"><a class="nav-link" href="#" onclick="scrollToFooter()">Contact Us</a></li>
+                </ul>
+                </ul>
+                <div class="search-container">
+                    <input type="text" id="search-bar" class="form-control" placeholder="SEARCH CAKE, GIFTS, ETC." oninput="filterItems()">
+                    <button class="btn btn-light search-button">🔍</button>
+                </div>
+                <a href="cart.html" class="btn btn-light cart-button ms-2">&#128722; <b>CART</b></a>
+                <button class="toggle-button ms-2" id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="divider"></div>
+
+    <div class="category-section text-center" id="categories">
+        <h2 class="mb-4">Our Gift Selection</h2>
+        <div class="row">
+            <!-- Gift 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/cup.jpg" class="card-img-top" alt="Gift Item 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Mug</h5>
+                        <p class="card-text">Start your day with a personalized touch.</p>
+                        <p class="card-price">$20.00</p>  
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity1" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Personalized Mug', 20.00, document.getElementById('quantity1').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/calender.jpg" class="card-img-top" alt="Gift Item 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Customized Calendar</h5>
+                        <p class="card-text">Plan your year with personalized memories.</p>
+                        <p class="card-price">$15.00</p> 
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity2" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Customized Calendar', 15.00, document.getElementById('quantity2').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/gifts.jpg" class="card-img-top" alt="Gift Item 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Engraved Keychain</h5>
+                        <p class="card-text">Carry your memories wherever you go.</p>
+                        <p class="card-price">$10.00</p>  
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity3" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Engraved Keychain', 10.00, document.getElementById('quantity3').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/candel.jpg" class="card-img-top" alt="Gift Item 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Scented Candle</h5>
+                        <p class="card-text">Create a warm ambiance.</p>
+                        <p class="card-price">$18.00</p>  
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity4" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Scented Candle', 18.00, document.getElementById('quantity4').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/choclate.jpg" class="card-img-top" alt="Gift Item 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Gourmet Chocolate Box</h5>
+                        <p class="card-text">A delightful assortment of chocolates.</p>
+                        <p class="card-price">$30.00</p> <!-- Price above Add to Cart -->
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity5" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Gourmet Chocolate Box', 30.00, document.getElementById('quantity5').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/bag.webp" class="card-img-top" alt="Gift Item 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Customized Tote Bag</h5>
+                        <p class="card-text">Carry your essentials in style.</p>
+                        <p class="card-price">$25.00</p> <!-- Price above Add to Cart -->
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity6" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Customized Tote Bag', 25.00, document.getElementById('quantity6').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/notebook.jpg" class="card-img-top" alt="Gift Item 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Notebook</h5>
+                        <p class="card-text">Capture your thoughts in style.</p>
+                        <p class="card-price">$12.00</p> <!-- Price above Add to Cart -->
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity7" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Personalized Notebook', 12.00, document.getElementById('quantity7').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/frame.jpg" class="card-img-top" alt="Gift Item 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Photo Frame</h5>
+                        <p class="card-text">Display your cherished memories.</p>
+                        <p class="card-price">$22.00</p> <!-- Price above Add to Cart -->
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity8" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Photo Frame', 22.00, document.getElementById('quantity8').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gift 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/festival/WhatsApp%20Image%202024-10-22%20at%2009.19.52_270e2236.jpg" class="card-img-top" alt="Gift Item 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Customized T-Shirt</h5>
+                        <p class="card-text">Wear your personality on your sleeve.</p>
+                        <p class="card-price">$16.00</p>  
+                        <div class="d-flex align-items-center add-to-cart">
+                            <input type="number" min="1" value="1" class="form-control me-2" id="quantity9" style="width: 60px;">
+                            <button class="btn btn-primary" onclick="addToCart('Customized T-Shirt', 16.00, document.getElementById('quantity9').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="Footer" style="background:  #343a40; padding: 20px; color: white; text-align: center; font-family: Arial, sans-serif;">
+        <h2 style="color: white; font-size: 1.5em; margin-bottom: 10px;">Confession Cakes</h2>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Main Branch:</h3>
+            <p>S.C.O. 91-92, Sector-9, Main Market, near OPS School, Ambala City</p>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Other Branches:</h3>
+            <p>Shop no. 8, Pipli Road, Kurukshetra</p>
+            <p>Shop no. 6/13 opposite SD Public School, Jagadhri Road, Ambala Cantt</p>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <h3 style="color: lightgreen; margin: 10px 0;">Phone:</h3>
+            <p><strong>Main Branch:</strong> +91 70825-04343, +91 70825-14343</p>
+            <p><strong>Kurukshetra Branch:</strong> +91 70829-04343, +91 70827-14343</p>
+            <p><strong>Ambala Cantt Branch:</strong> +91 70826-04343, +91 70826-14343</p>
+        </div>
+    
+        <div>
+            <h3 style="color: lightgreen; margin: 10px 0;">Email:</h3>
+            <p><a href="mailto:mohanbakery1929@gmail.com" style="color: lightgreen; text-decoration: none;">mohanbakery1929@gmail.com</a></p>
+        </div>
+    </footer>
+    
+
+    <script>
+         function addToCart(itemName, itemPrice, quantity) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cartItems.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity += parseInt(quantity);
+            } else {
+                cartItems.push({ name: itemName, price: itemPrice, quantity: parseInt(quantity) });
+            }
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert(`${quantity} ${itemName} added to cart!`);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function filterItems() {
+            const searchValue = document.getElementById('search-bar').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                if (title.includes(searchValue)) {
+                    card.parentElement.style.display = '';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+        }
+        function scrollToFooter() {
+            document.getElementById("Footer").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function filterByPrice() {
+            const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const priceText = card.querySelector('.card-price').textContent.match(/\$(\d+(\.\d+)?)/);
+                const price = priceText ? parseFloat(priceText[1]) : 0;
+
+                if (price >= minPrice && price <= maxPrice) {
+                    card.parentElement.style.display = '';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+        }
+        function toggleDarkMode() {
+            const body = document.body;
+            const navbar = document.querySelector('.navbar');
+            const footer = document.querySelector('.footer');
+            const toggleButton = document.getElementById('darkModeToggle');
+            const searchButton = document.querySelector('.search-button');
+    
+            body.classList.toggle('dark-mode');
+            
+            
+            if (body.classList.contains('dark-mode')) {
+                navbar.style.backgroundColor = '#343a40';  
+                footer.style.backgroundColor = '#343a40'; 
+                searchButton.style.backgroundColor = '#343a40';  
+                navbar.style.color = '#ffffff'; 
+                footer.style.color = '#ffffff';  
+    
+                
+                const navLinks = navbar.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.style.color = '#ffffff';  
+                });
+    
+                toggleButton.textContent = '🌞';  
+            } else {
+                navbar.style.backgroundColor = '#ffcccb';  
+                footer.style.backgroundColor = '#ffcccb';  
+                searchButton.style.backgroundColor = '#ffcccb';  
+                navbar.style.color = '#000000';  
+                footer.style.color = '#000000';  
+    
+                
+                const navLinks = navbar.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.style.color = '#000000'; 
+                });
+    
+                toggleButton.textContent = '🌙'; 
+            }
+        }
+        
+ 
+
+             
+        
+    </script>
+
+</body>
+</html>

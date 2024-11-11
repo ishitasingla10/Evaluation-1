@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Cakes - Confession Cakes</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            padding: 20px;
+            height: 80px;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px;
+            width: 100px;
+            height: 50pxpx;
+            border-radius: 50%;
+        }
+
+        .nav-item {
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        .category-section {
+            margin: 40px 0;
+            flex: 1;
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-price {
+            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-button {
+            padding: 10px;
+            background-color: #343a40;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        #search-bar {
+            border-radius: 5px;
+            border: 1px solid #343a40;
+        }
+
+        .toggle-button {
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .cart-button {
+            padding: 10px;
+        }
+
+        .quantity-input {
+            width: 60px;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 15px;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
+ 
+        @media (max-width: 768px) {
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .modal-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src=" file:///C:/Users/HP/Downloads/logo.jpg" alt="Logo" width="40">
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+                     
+                    <li class="nav-item"><a class="nav-link" href="http://localhost:3000/cake1">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" id="search-bar" class="form-control" placeholder="SEARCH CAKE, GIFTS, ETC." oninput="filterItems()">
+                    <button class="btn btn-light search-button">🔍</button>
+                </div>
+                <a href="cart.html" class="btn btn-light cart-button ms-2">&#128722; <b>CART</b></a>
+                <button class="toggle-button ms-2" id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="divider"></div>
+
+     
+    <div class="category-section text-center" id="anniversary-cakes">
+        <h2 class="mb-4">Our Anniversary Cake Selection</h2>
+        <div class="row">
+            <!-- Anniversary Cake 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src="file:///C:/Users/HP/Downloads/choclate%20anni.avif" class="card-img-top" alt="Chocolate Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Chocolate Anniversary Cake', 'A rich chocolate cake perfect for your special day.', 'path/to/chocolate-anniversary-cake.jpg')">Chocolate Anniversary Cake</h5>
+                        <p class="card-price">$40.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity4">
+                            <button class="btn btn-primary" onclick="addToCart('Chocolate Anniversary Cake', 40.00, document.getElementById('quantity4').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Desktop/final%20project/Evaluation-1/main%20website/gifts/anniversery.jpg" class="card-img-top" alt="Red Velvet Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Red Velvet Anniversary Cake', 'A delightful red velvet cake for unforgettable moments.', 'path/to/red-velvet-anniversary-cake.jpg')">Red Velvet Anniversary Cake</h5>
+                        <p class="card-price">$45.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity5">
+                            <button class="btn btn-primary" onclick="addToCart('Red Velvet Anniversary Cake', 45.00, document.getElementById('quantity5').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src="file:///C:/Users/HP/Downloads/vannila%20anni.jpeg" class="card-img-top" alt="Vanilla Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Vanilla Anniversary Cake', 'A classic vanilla cake that never goes out of style.', 'path/to/vanilla-anniversary-cake.jpg')">Vanilla Anniversary Cake</h5>
+                        <p class="card-price">$38.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity6">
+                            <button class="btn btn-primary" onclick="addToCart('Vanilla Anniversary Cake', 38.00, document.getElementById('quantity6').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/straw%20anni.avif" class="card-img-top" alt="Strawberry Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Strawberry Anniversary Cake', 'A fresh strawberry cake that adds sweetness to your celebration.', 'path/to/strawberry-anniversary-cake.jpg')">Strawberry Anniversary Cake</h5>
+                        <p class="card-price">$42.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity7">
+                            <button class="btn btn-primary" onclick="addToCart('Strawberry Anniversary Cake', 42.00, document.getElementById('quantity7').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/forest.webp" class="card-img-top" alt="Black Forest Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Black Forest Anniversary Cake', 'A luscious black forest cake with cherries and cream.', 'path/to/black-forest-anniversary-cake.jpg')">Black Forest Anniversary Cake</h5>
+                        <p class="card-price">$50.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity8">
+                            <button class="btn btn-primary" onclick="addToCart('Black Forest Anniversary Cake', 50.00, document.getElementById('quantity8').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src="file:///C:/Users/HP/Downloads/lemonanni.jpg" class="card-img-top" alt="Lemon Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Lemon Anniversary Cake', 'A zesty lemon cake that brings a refreshing twist.', 'path/to/lemon-anniversary-cake.jpg')">Lemon Anniversary Cake</h5>
+                        <p class="card-price">$36.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity9">
+                            <button class="btn btn-primary" onclick="addToCart('Lemon Anniversary Cake', 36.00, document.getElementById('quantity9').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src=" file:///C:/Users/HP/Downloads/roseanni.webp" class="card-img-top" alt="Red Velvet Rose Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Red Velvet Rose Anniversary Cake', 'A romantic red velvet cake with cream cheese frosting.', 'path/to/red-velvet-rose-anniversary-cake.jpg')">Red Velvet Rose Anniversary Cake</h5>
+                        <p class="card-price">$48.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity10">
+                            <button class="btn btn-primary" onclick="addToCart('Red Velvet Rose Anniversary Cake', 48.00, document.getElementById('quantity10').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src="file:///C:/Users/HP/Downloads/vanichoc.jpg" class="card-img-top" alt="Vanilla Chocolate Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Vanilla Chocolate Anniversary Cake', 'A perfect blend of vanilla and chocolate for any celebration.', 'path/to/vanilla-chocolate-anniversary-cake.jpg')">Vanilla Chocolate Anniversary Cake</h5>
+                        <p class="card-price">$44.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity11">
+                            <button class="btn btn-primary" onclick="addToCart('Vanilla Chocolate Anniversary Cake', 44.00, document.getElementById('quantity11').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Anniversary Cake 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-lg">
+                    <img src="file:///C:/Users/HP/Downloads/fruitanni.jpg" class="card-img-top" alt="Fruit Cake Anniversary Cake">
+                    <div class="card-body text-center">
+                        <h5 class="card-title" onclick="showDescription('Fruit Cake Anniversary Cake', 'A delightful fruit cake, perfect for a special anniversary.', 'path/to/fruit-cake-anniversary-cake.jpg')">Fruit Cake Anniversary Cake</h5>
+                        <p class="card-price">$55.00</p>
+                        <div class="d-flex justify-content-center align-items-center mt-3">
+                            <input type="number" min="1" value="1" class="form-control quantity-input me-2" id="quantity12">
+                            <button class="btn btn-primary" onclick="addToCart('Fruit Cake Anniversary Cake', 55.00, document.getElementById('quantity12').value)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <p>Follow us on social media:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div>
+            <p>&copy; 2024 Confession Cakes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+     
+    <div class="modal fade" id="cakeDescriptionModal" tabindex="-1" aria-labelledby="cakeDescriptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cakeDescriptionModalLabel">Cake Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="cake-image" src="" alt="" class="img-fluid mb-3">
+                    <h5 id="cake-name"></h5>
+                    <p id="cake-description"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterItems() {
+    const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        if (title.includes(searchQuery)) {
+            card.parentElement.style.display = 'block';   
+        } else {
+            card.parentElement.style.display = 'none';   
+        }
+    });
+}
+
+       function addToCart(itemName, itemPrice, quantity) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cartItems.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity += parseInt(quantity);
+            } else {
+                cartItems.push({ name: itemName, price: itemPrice, quantity: parseInt(quantity) });
+            }
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            alert(`${quantity} ${itemName} added to cart!`);
+        }
+        function toggleDarkMode() {
+        const body = document.body;
+        const toggleButton = document.getElementById('darkModeToggle');
+        body.classList.toggle('dark-mode');
+        toggleButton.textContent = body.classList.contains('dark-mode') ? '🌞' : '🌙'; // Change icon
+    }
+        function showDescription(name, description, imgPath) {
+            document.getElementById('cake-name').innerText = name;
+            document.getElementById('cake-description').innerText = description;
+            document.getElementById('cake-image').src = imgPath;
+            const myModal = new bootstrap.Modal(document.getElementById('cakeDescriptionModal'));
+            myModal.show();
+        }
+        function toggleDarkMode() {
+            const body = document.body;
+            const navbar = document.querySelector('.navbar');
+            const footer = document.querySelector('.footer');
+            const toggleButton = document.getElementById('darkModeToggle');
+            const searchButton = document.querySelector('.search-button');
+    
+            body.classList.toggle('dark-mode');
+            
+             
+            if (body.classList.contains('dark-mode')) {
+                navbar.style.backgroundColor = '#343a40';  
+                footer.style.backgroundColor = '#343a40';   
+                searchButton.style.backgroundColor = '#343a40';  
+                navbar.style.color = '#ffffff';  
+                footer.style.color = '#ffffff';  
+    
+                
+                const navLinks = navbar.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.style.color = '#ffffff';  
+                });
+    
+                toggleButton.textContent = '🌞';  
+            } else {
+                navbar.style.backgroundColor = '#ffcccb';  
+                footer.style.backgroundColor = '#ffcccb'; 
+                searchButton.style.backgroundColor = '#ffcccb'; 
+                navbar.style.color = '#000000';  
+                footer.style.color = '#000000';  
+    
+                
+                const navLinks = navbar.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.style.color = '#000000';  
+                });
+    
+                toggleButton.textContent = '🌙';  
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-O2VsD5YdoqJ6Zh3WQ01lY1B3hFzZ6hA7OZZMZspQ4I1N3tWBRh4cIoD/RWqH3wWz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-q8i/X+965DzO0rTqB7A1d2fWVu18QhU4ONdDoHVQhW/gmG/Ehx1Y97XgWgHJ/yhZ" crossorigin="anonymous"></script>
+</body>
+</html>
